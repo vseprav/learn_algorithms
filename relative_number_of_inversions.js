@@ -10,22 +10,22 @@ let A1 = A.map((item)=>{ return item}).sort((a,b) => { return a - b });
 let A_Map = {};
 A.forEach((item, index) => {
   A_Map[item] = index;
-})
+});
 
 let B1 = [];
 
 A1.forEach((item) => {
   B1.push(B[A_Map[item]]);
-})
+});
 
 let inversions_count = 0;
 
 A1.forEach((item) => {
-  let index = B1.indexOf(item)
+  let index = B1.indexOf(item);
   if (index > -1) {
     B1.splice(index, 1);
   }
   inversions_count = inversions_count + index
-})
+});
 
-console.log(inversions_count)
+console.log(inversions_count);
